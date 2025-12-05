@@ -39,8 +39,8 @@
 
 # DBTITLE 1,Install Prerequisites and Restart Python
 # Install prerequisite packages
-%pip install -r ../../agent_requirements.txt
-dbutils.library.restartPython()
+#%pip install -r ../../agent_requirements.txt
+#dbutils.library.restartPython()
 
 # COMMAND ----------
 

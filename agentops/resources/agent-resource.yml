@@ -22,7 +22,7 @@ resources:
               model_alias: ${var.model_alias}
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
               git_source_info: url:${bundle.git.origin_url}; branch:${bundle.git.branch}; commit:${bundle.git.commit}
-          #environment_key: agent_requirements
+          environment_key: agent_requirements
 
         - task_key: AgentEvaluation
           depends_on:
@@ -38,7 +38,7 @@ resources:
               model_alias: ${var.model_alias}
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
               git_source_info: url:${bundle.git.origin_url}; branch:${bundle.git.branch}; commit:${bundle.git.commit}
-          #environment_key: agent_requirements
+          environment_key: agent_requirements
 
         - task_key: AgentDeployment
           depends_on:
@@ -54,7 +54,7 @@ resources:
               mlflow_experiment_path: ${var.mlflow_experiment_path}
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
               git_source_info: url:${bundle.git.origin_url}; branch:${bundle.git.branch}; commit:${bundle.git.commit}
-          #environment_key: agent_requirements
+          environment_key: agent_requirements
 
       schedule:
         quartz_cron_expression: "0 0 6 * * ?" # daily at 6am

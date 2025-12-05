@@ -45,7 +45,7 @@
 
 # DBTITLE 1,Install Prerequisites
 # Install prerequisite packages
-%pip install -r ../../agent_requirements.txt
+#%pip install -r ../../agent_requirements.txt
 
 # COMMAND ----------
 

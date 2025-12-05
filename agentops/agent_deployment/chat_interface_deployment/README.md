@@ -1,0 +1,59 @@
+# Databricks Chatbot Application
+
+A modern, responsive chat interface that connects to Databricks AI serving endpoints, built with Dash and Python.
+
+## Features
+
+- Easy deployment as a Databricks App
+- Real-time chat interactions with Databricks AI models
+- Ability to collect user feedback on the responses
+    - Thumbs up / Thumbs down
+    - Additional feedback
+
+## Deployment
+
+This app is deployed as part of the Databricks Asset Bundle.
+
+### Step 1: Deploy the Bundle
+
+```bash
+databricks bundle deploy -t dev
+```
+
+This will:
+- ✅ Create/update the app definition in the workspace
+- ✅ Sync the app source code
+- ✅ Configure environment variables (SERVING_ENDPOINT)
+
+### Step 2: Start the App
+
+**Important**: Bundle deploy does NOT automatically start the app. You must start it manually:
+
+```bash
+# Option 1: Using Databricks CLI
+databricks apps start agentops-chatbot-app-dev
+
+# Option 2: Using the Workspace UI
+# Navigate to Workspace > Apps > [your app name] > Click "Start"
+```
+
+### App Name Pattern
+
+The app name follows this pattern: `{project_name}-chatbot-app-{target}`
+
+Examples:
+- Dev: `agentops-chatbot-app-dev`
+- Staging: `agentops-chatbot-app-staging`
+- Prod: `agentops-chatbot-app-prod`
+
+### Verifying Deployment
+
+After starting the app, check its status:
+
+```bash
+# Check app status
+databricks apps get agentops-chatbot-app-dev
+
+# View app logs (if needed)
+databricks apps logs agentops-chatbot-app-dev
+```
